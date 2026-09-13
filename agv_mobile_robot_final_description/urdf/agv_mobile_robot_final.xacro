@@ -1,0 +1,572 @@
+<?xml version="1.0" ?>
+<robot name="agv_mobile_robot_final" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find agv_mobile_robot_final_description)/urdf/materials.xacro" />
+<xacro:include filename="$(find agv_mobile_robot_final_description)/urdf/agv_mobile_robot_final.trans" />
+<xacro:include filename="$(find agv_mobile_robot_final_description)/urdf/agv_mobile_robot_final.gazebo" />
+<link name="base_link">
+  <inertial>
+    <origin xyz="-2.7546177114513862e-17 -3.801372441802913e-15 0.00045622939978561634" rpy="0 0 0"/>
+    <mass value="2.591841829534931"/>
+    <inertia ixx="0.021843" iyy="0.010247" izz="0.0318" ixy="0.0" iyz="-0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://agv_mobile_robot_final_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://agv_mobile_robot_final_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="actuator_1_2">
+  <inertial>
+    <origin xyz="-0.031709200865510156 -3.5293434841321414e-11 -3.480758367264969e-07" rpy="0 0 0"/>
+    <mass value="0.2958780075293276"/>
+    <inertia ixx="2.9e-05" iyy="0.000114" izz="0.000114" ixy="-0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.095 0.13 0.02" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://agv_mobile_robot_final_description/meshes/actuator_1_2.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.095 0.13 0.02" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://agv_mobile_robot_final_description/meshes/actuator_1_2.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="right_mechanum_flange_1">
+  <inertial>
+    <origin xyz="-0.0009351558019387168 -5.972138533982818e-07 -1.0982476493295867e-06" rpy="0 0 0"/>
+    <mass value="0.017585048067516238"/>
+    <inertia ixx="9e-06" iyy="4e-06" izz="4e-06" ixy="0.0" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.1155 0.13 0.02" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://agv_mobile_robot_final_description/meshes/right_mechanum_flange_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.1155 0.13 0.02" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://agv_mobile_robot_final_description/meshes/right_mechanum_flange_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="actuator_1_4">
+  <inertial>
+    <origin xyz="0.031709200865510184 3.5293240552292104e-11 -3.480758367264969e-07" rpy="0 0 0"/>
+    <mass value="0.2958780075293276"/>
+    <inertia ixx="2.9e-05" iyy="0.000114" izz="0.000114" ixy="-0.0" iyz="-0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.095 -0.13 0.02" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://agv_mobile_robot_final_description/meshes/actuator_1_4.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.095 -0.13 0.02" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://agv_mobile_robot_final_description/meshes/actuator_1_4.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="actuator_1_1">
+  <inertial>
+    <origin xyz="-0.031709200865510184 -3.5293490352472645e-11 -3.480758367126191e-07" rpy="0 0 0"/>
+    <mass value="0.2958780075293276"/>
+    <inertia ixx="2.9e-05" iyy="0.000114" izz="0.000114" ixy="-0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.095 -0.13 0.02" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://agv_mobile_robot_final_description/meshes/actuator_1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.095 -0.13 0.02" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://agv_mobile_robot_final_description/meshes/actuator_1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="motor_shaft_coupling_1">
+  <inertial>
+    <origin xyz="-0.0009334173338682861 -9.303668946358812e-14 -5.718342466209947e-14" rpy="0 0 0"/>
+    <mass value="0.04364666666990693"/>
+    <inertia ixx="5e-06" iyy="3e-06" izz="3e-06" ixy="-0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.1105 0.13 0.02" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://agv_mobile_robot_final_description/meshes/motor_shaft_coupling_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.1105 0.13 0.02" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://agv_mobile_robot_final_description/meshes/motor_shaft_coupling_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="right_mechanum_flange_2">
+  <inertial>
+    <origin xyz="-0.000935155801938703 0.2599993013269878 -0.00025103666209940964" rpy="0 0 0"/>
+    <mass value="0.017585048067516238"/>
+    <inertia ixx="9e-06" iyy="4e-06" izz="4e-06" ixy="0.0" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.1155 0.13 0.02" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://agv_mobile_robot_final_description/meshes/right_mechanum_flange_2.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.1155 0.13 0.02" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://agv_mobile_robot_final_description/meshes/right_mechanum_flange_2.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="right_mechanum_flange_outer_2">
+  <inertial>
+    <origin xyz="-0.1580648441980613 -0.09591720740424353 -0.06908232401745773" rpy="0 0 0"/>
+    <mass value="0.017585048067516266"/>
+    <inertia ixx="9e-06" iyy="4e-06" izz="4e-06" ixy="-0.0" iyz="-0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.0145 -0.225916 -0.048832" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://agv_mobile_robot_final_description/meshes/right_mechanum_flange_outer_2.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.0145 -0.225916 -0.048832" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://agv_mobile_robot_final_description/meshes/right_mechanum_flange_outer_2.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="motor_shaft_coupling_2">
+  <inertial>
+    <origin xyz="-0.0009334173338682306 -7.466249840604178e-15 -1.0932921234996229e-13" rpy="0 0 0"/>
+    <mass value="0.04364666666990693"/>
+    <inertia ixx="5e-06" iyy="3e-06" izz="3e-06" ixy="-0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.1105 -0.13 0.02025" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://agv_mobile_robot_final_description/meshes/motor_shaft_coupling_2.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.1105 -0.13 0.02025" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://agv_mobile_robot_final_description/meshes/motor_shaft_coupling_2.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="motor_shaft_coupling__1__1">
+  <inertial>
+    <origin xyz="0.0009334173338682306 -2.4119595209981526e-14 1.0696304952872993e-13" rpy="0 0 0"/>
+    <mass value="0.04364666666990693"/>
+    <inertia ixx="5e-06" iyy="3e-06" izz="3e-06" ixy="0.0" iyz="-0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.1105 0.13 0.02" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://agv_mobile_robot_final_description/meshes/motor_shaft_coupling__1__1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.1105 0.13 0.02" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://agv_mobile_robot_final_description/meshes/motor_shaft_coupling__1__1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="left_mechanum_flange_2">
+  <inertial>
+    <origin xyz="-0.10293515580193846 0.13118284959091983 -0.061511917064640605" rpy="0 0 0"/>
+    <mass value="0.01758504806751607"/>
+    <inertia ixx="9e-06" iyy="4e-06" izz="4e-06" ixy="-0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.2465 0.001182 -0.039511" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://agv_mobile_robot_final_description/meshes/left_mechanum_flange_2.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.2465 0.001182 -0.039511" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://agv_mobile_robot_final_description/meshes/left_mechanum_flange_2.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="omni_wheel__2__2">
+  <inertial>
+    <origin xyz="0.12158111144256818 -0.11083899999996086 0.04376500000000752" rpy="0 0 0"/>
+    <mass value="0.12323766996512543"/>
+    <inertia ixx="9.8e-05" iyy="5.5e-05" izz="5.5e-05" ixy="0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.008425 -0.240839 0.065765" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://agv_mobile_robot_final_description/meshes/omni_wheel__2__2.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.008425 -0.240839 0.065765" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://agv_mobile_robot_final_description/meshes/omni_wheel__2__2.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="left_mechanum_flange_outer_2">
+  <inertial>
+    <origin xyz="-0.019064844198061287 -0.11452921899890148 0.13085672277446214" rpy="0 0 0"/>
+    <mass value="0.017585048067516058"/>
+    <inertia ixx="9e-06" iyy="4e-06" izz="4e-06" ixy="-0.0" iyz="-0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.1355 -0.244528 0.152857" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://agv_mobile_robot_final_description/meshes/left_mechanum_flange_outer_2.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.1355 -0.244528 0.152857" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://agv_mobile_robot_final_description/meshes/left_mechanum_flange_outer_2.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="motor_shaft_coupling__1__2">
+  <inertial>
+    <origin xyz="0.0009334173338682306 -1.3711254354120683e-14 -1.087151202394665e-13" rpy="0 0 0"/>
+    <mass value="0.04364666666990693"/>
+    <inertia ixx="5e-06" iyy="3e-06" izz="3e-06" ixy="0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.1105 -0.13 0.022" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://agv_mobile_robot_final_description/meshes/motor_shaft_coupling__1__2.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.1105 -0.13 0.022" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://agv_mobile_robot_final_description/meshes/motor_shaft_coupling__1__2.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="omni_wheel__1__1">
+  <inertial>
+    <origin xyz="-0.16751588855744268 -0.08991100000000052 -0.08667399999998718" rpy="0 0 0"/>
+    <mass value="0.12323766996513003"/>
+    <inertia ixx="9.8e-05" iyy="5.5e-05" izz="5.5e-05" ixy="0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.037522 -0.219911 -0.066424" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://agv_mobile_robot_final_description/meshes/omni_wheel__1__1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.037522 -0.219911 -0.066424" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://agv_mobile_robot_final_description/meshes/omni_wheel__1__1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="actuator_1_3">
+  <inertial>
+    <origin xyz="0.031709200865510254 3.529274095193102e-11 -3.480758367264969e-07" rpy="0 0 0"/>
+    <mass value="0.2958780075293276"/>
+    <inertia ixx="2.9e-05" iyy="0.000114" izz="0.000114" ixy="-0.0" iyz="-0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.095 0.13 0.02" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://agv_mobile_robot_final_description/meshes/actuator_1_3.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.095 0.13 0.02" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://agv_mobile_robot_final_description/meshes/actuator_1_3.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="omni_wheel_1">
+  <inertial>
+    <origin xyz="-0.01117188855738778 -0.02748299999998849 0.010716000000000541" rpy="0 0 0"/>
+    <mass value="0.1232376699651355"/>
+    <inertia ixx="9.8e-05" iyy="5.5e-05" izz="5.5e-05" ixy="0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.118822 0.102517 0.030716" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://agv_mobile_robot_final_description/meshes/omni_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.118822 0.102517 0.030716" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://agv_mobile_robot_final_description/meshes/omni_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="right_mechanum_flange_outer_1">
+  <inertial>
+    <origin xyz="-0.1580648441980617 -0.08893317815448579 -0.07786658195176588" rpy="0 0 0"/>
+    <mass value="0.017585048067516266"/>
+    <inertia ixx="9e-06" iyy="4e-06" izz="4e-06" ixy="-0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.0145 0.041068 -0.057867" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://agv_mobile_robot_final_description/meshes/right_mechanum_flange_outer_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.0145 0.041068 -0.057867" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://agv_mobile_robot_final_description/meshes/right_mechanum_flange_outer_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="left_mechanum_flange_1">
+  <inertial>
+    <origin xyz="0.0009351558019387307 9.191495288773943e-07 8.473348981734297e-07" rpy="0 0 0"/>
+    <mass value="0.01758504806751607"/>
+    <inertia ixx="9e-06" iyy="4e-06" izz="4e-06" ixy="0.0" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.1155 0.13 0.02" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://agv_mobile_robot_final_description/meshes/left_mechanum_flange_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.1155 0.13 0.02" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://agv_mobile_robot_final_description/meshes/left_mechanum_flange_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="omni_wheel__3__1">
+  <inertial>
+    <origin xyz="0.01117188855748917 0.02256600000001263 -0.01899799999999511" rpy="0 0 0"/>
+    <mass value="0.12323766996513107"/>
+    <inertia ixx="9.8e-05" iyy="5.5e-05" izz="5.5e-05" ixy="0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.118822 0.152566 0.001002" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://agv_mobile_robot_final_description/meshes/omni_wheel__3__1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.118822 0.152566 0.001002" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://agv_mobile_robot_final_description/meshes/omni_wheel__3__1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="left_mechanum_flange_outer_1">
+  <inertial>
+    <origin xyz="-0.10293515580193852 -0.11805118671139976 -0.0060436068990274774" rpy="0 0 0"/>
+    <mass value="0.017585048067516058"/>
+    <inertia ixx="9e-06" iyy="4e-06" izz="4e-06" ixy="0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.2465 0.01195 0.013956" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://agv_mobile_robot_final_description/meshes/left_mechanum_flange_outer_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.2465 0.01195 0.013956" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://agv_mobile_robot_final_description/meshes/left_mechanum_flange_outer_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<joint name="Rigid 2" type="fixed">
+  <origin xyz="0.095 -0.13 -0.02" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="actuator_1_2"/>
+</joint>
+
+<joint name="Rigid 3" type="fixed">
+  <origin xyz="-0.005 0.0 0.0" rpy="0 0 0"/>
+  <parent link="motor_shaft_coupling_1"/>
+  <child link="right_mechanum_flange_1"/>
+</joint>
+
+<joint name="Rigid 4" type="fixed">
+  <origin xyz="-0.095 0.13 -0.02" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="actuator_1_4"/>
+</joint>
+
+<joint name="Rigid 5" type="fixed">
+  <origin xyz="0.095 0.13 -0.02" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="actuator_1_1"/>
+</joint>
+
+<joint name="Revolute 10" type="continuous">
+  <origin xyz="-0.0155 0.0 0.0" rpy="0 0 0"/>
+  <parent link="actuator_1_3"/>
+  <child link="motor_shaft_coupling_1"/>
+  <axis xyz="-1.0 0.0 -0.0"/>
+</joint>
+
+<joint name="Rigid 11" type="fixed">
+  <origin xyz="-0.005 -0.26 0.00025" rpy="0 0 0"/>
+  <parent link="motor_shaft_coupling_2"/>
+  <child link="right_mechanum_flange_2"/>
+</joint>
+
+<joint name="Rigid 15" type="fixed">
+  <origin xyz="0.13 0.355916 0.068832" rpy="0 0 0"/>
+  <parent link="right_mechanum_flange_2"/>
+  <child link="right_mechanum_flange_outer_2"/>
+</joint>
+
+<joint name="Revolute 17" type="continuous">
+  <origin xyz="-0.0155 0.0 -0.00025" rpy="0 0 0"/>
+  <parent link="actuator_1_4"/>
+  <child link="motor_shaft_coupling_2"/>
+  <axis xyz="-1.0 0.0 -0.0"/>
+</joint>
+
+<joint name="Revolute 23" type="continuous">
+  <origin xyz="0.0155 0.0 0.0" rpy="0 0 0"/>
+  <parent link="actuator_1_2"/>
+  <child link="motor_shaft_coupling__1__1"/>
+  <axis xyz="1.0 0.0 -0.0"/>
+</joint>
+
+<joint name="Rigid 24" type="fixed">
+  <origin xyz="0.111 -0.24571 0.192368" rpy="0 0 0"/>
+  <parent link="left_mechanum_flange_outer_2"/>
+  <child link="left_mechanum_flange_2"/>
+</joint>
+
+<joint name="Rigid 25" type="fixed">
+  <origin xyz="-0.238075 0.242021 -0.105276" rpy="0 0 0"/>
+  <parent link="left_mechanum_flange_2"/>
+  <child link="omni_wheel__2__2"/>
+</joint>
+
+<joint name="Rigid 26" type="fixed">
+  <origin xyz="0.025 0.114528 -0.130857" rpy="0 0 0"/>
+  <parent link="motor_shaft_coupling__1__2"/>
+  <child link="left_mechanum_flange_outer_2"/>
+</joint>
+
+<joint name="Revolute 28" type="continuous">
+  <origin xyz="0.0155 0.0 -0.002" rpy="0 0 0"/>
+  <parent link="actuator_1_1"/>
+  <child link="motor_shaft_coupling__1__2"/>
+  <axis xyz="1.0 0.0 0.0"/>
+</joint>
+
+<joint name="Rigid 30" type="fixed">
+  <origin xyz="0.153022 0.349911 0.086424" rpy="0 0 0"/>
+  <parent link="right_mechanum_flange_2"/>
+  <child link="omni_wheel__1__1"/>
+</joint>
+
+<joint name="Rigid 31" type="fixed">
+  <origin xyz="-0.095 -0.13 -0.02" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="actuator_1_3"/>
+</joint>
+
+<joint name="Rigid 32" type="fixed">
+  <origin xyz="-0.003322 0.027483 -0.010716" rpy="0 0 0"/>
+  <parent link="right_mechanum_flange_1"/>
+  <child link="omni_wheel_1"/>
+</joint>
+
+<joint name="Rigid 33" type="fixed">
+  <origin xyz="0.13 0.088932 0.077867" rpy="0 0 0"/>
+  <parent link="right_mechanum_flange_1"/>
+  <child link="right_mechanum_flange_outer_1"/>
+</joint>
+
+<joint name="Rigid 34" type="fixed">
+  <origin xyz="0.005 0.0 0.0" rpy="0 0 0"/>
+  <parent link="motor_shaft_coupling__1__1"/>
+  <child link="left_mechanum_flange_1"/>
+</joint>
+
+<joint name="Rigid 35" type="fixed">
+  <origin xyz="0.003322 -0.022566 0.018998" rpy="0 0 0"/>
+  <parent link="left_mechanum_flange_1"/>
+  <child link="omni_wheel__3__1"/>
+</joint>
+
+<joint name="Rigid 36" type="fixed">
+  <origin xyz="0.131 0.11805 0.006044" rpy="0 0 0"/>
+  <parent link="left_mechanum_flange_1"/>
+  <child link="left_mechanum_flange_outer_1"/>
+</joint>
+
+</robot>
